@@ -19,7 +19,6 @@ module.exports = {
       },
       phone: {
         type: Sequelize.STRING,
-        unique: true,
         allowNull: false,
       },
       employee: {

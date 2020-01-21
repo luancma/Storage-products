@@ -17,9 +17,27 @@ class UserController {
       });
     }
 
-    const user = await User.create(req.body);
+    const { name, email, phone } = await User.create(req.body);
 
-    return res.status(200).json();
+    return res.status(201).json({
+      name,
+      email,
+      phone,
+    });
+  }
+
+  async update(req, res) {
+    const user = await User.findByPk(req.params.id);
+
+    if (!user) {
+      return res.status(404).json({
+        error: 'User not found',
+      });
+    }
+
+    const { email, name, phone } = await user.update(req.body);
+
+    return res.status(200).json({ name, email, phone });
   }
 }
 export default new UserController();
