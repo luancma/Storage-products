@@ -1,12 +1,12 @@
 ## Solut storage
 
-## Technologies: 
+#### Technologies: 
  - Node.js
  - Sequelize
  - PostgreSQL
  - Yarn
 
-## Features: 
+#### Features: 
 - [x] User CRUD :heavy_check_mark:
 - [x] Address associate with Provider :heavy_check_mark:
 - [ ] Provider CRUD :construction:
