@@ -3,7 +3,7 @@
 ## Technologies: 
  - Node.js
  - Sequelize
- - Postgres
+ - PostgreSQL
  - Yarn
 
 ## Features: 
