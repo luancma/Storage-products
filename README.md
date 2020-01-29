@@ -6,7 +6,7 @@
 ## Features: 
 - [x] User CRUD :heavy_check_mark:
 - [x] Address associate with Provider :heavy_check_mark:
-- [ ] Provider CRUD;
+- [ ] Provider CRUD :construction:
 - [ ] Products CRUD
 - [ ] Products associate with Provider
 - [ ] Sell
