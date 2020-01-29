@@ -9,4 +9,6 @@
 - [ ] Provider CRUD;
 - [ ] Products CRUD
 - [ ] Products associate with Provider
+- [ ] Sell
+
 
