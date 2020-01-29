@@ -1,7 +1,10 @@
-# Storage-products
+## Solut storage
 
-## Repositório com o código do Storage Products; 
-
+## Technologies: 
+ - Node.js
+ - Sequelize
+ - Postgres
+ - Yarn
 
 ## Features: 
 - [x] User CRUD :heavy_check_mark:
