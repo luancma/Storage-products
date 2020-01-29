@@ -65,6 +65,42 @@ class ProviderController {
       zip,
     });
   }
+
+  async index(req, res) {
+    const providers = await Provider.findAll({
+      attributes: ['name', 'fantasy_name', 'phone', 'code'],
+      include: [
+        {
+          model: Address,
+          attributes: [
+            'street',
+            'number',
+            'neighborhood',
+            'complement',
+            'country',
+            'city',
+            'state',
+            'zip',
+          ],
+        },
+      ],
+    });
+    return res.json({ providers });
+  }
+
+  async update(req, res) {
+    const provider = await Provider.findByPk(req.params.id);
+
+    const updateProvider = await provider.update(req.body);
+
+    if (!updateProvider) {
+      return res.status(401).json({
+        error: 'Erro para atualizar usuário',
+      });
+    }
+
+    return res.json({ message: 'Usuário atualizado com sucesso' });
+  }
 }
 
 export default new ProviderController();
