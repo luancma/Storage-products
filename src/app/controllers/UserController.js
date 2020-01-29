@@ -35,7 +35,7 @@ class UserController {
 
     if (!user) {
       return res.status(404).json({
-        error: 'User not found',
+        error: 'Usuário não cadastrado no sistema',
       });
     }
 
@@ -43,12 +43,14 @@ class UserController {
       const userExists = await User.findOne({ where: { email } });
 
       if (userExists) {
-        return res.status(400).json({ error: 'User already exists.' });
+        return res.status(400).json({
+          error: 'Esse email já está sendo utilizado por outro usuário.',
+        });
       }
     }
 
     if (oldPassword && !(await user.checkPassword(oldPassword))) {
-      return res.status(401).json({ error: 'Password does not match' });
+      return res.status(401).json({ error: 'Email ou senha inválidos' });
     }
 
     const { id, name, phone } = await user.update(req.body);
@@ -63,11 +65,15 @@ class UserController {
       },
     });
 
-    if (user) {
+    if (!user) {
       return res.json({
-        message: 'User deleted',
+        error: 'Erro ao deletar o usuário',
       });
     }
+
+    return res.json({
+      message: 'Usuário deletado com sucesso',
+    });
   }
 }
 export default new UserController();
