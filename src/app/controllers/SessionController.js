@@ -12,12 +12,12 @@ class SessionController {
     });
 
     if (!user) {
-      return res.status(404).json({ error: 'User not found' });
+      return res.status(404).json({ error: 'Email ou senha não conferem' });
     }
 
     if (!(await user.checkPassword(password))) {
       return res.status(401).json({
-        error: 'Password does not match',
+        error: 'As senhas não conferem',
       });
     }
 

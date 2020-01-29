@@ -16,6 +16,8 @@ routes.post('/users', UserController.store);
 routes.put('/users/:id', UserController.update);
 routes.delete('/users/:id', UserController.delete);
 
+routes.get('/providers', ProviderController.index);
 routes.post('/providers', ProviderController.store);
+routes.put('/providers/:id', ProviderController.update);
 
 export default routes;
