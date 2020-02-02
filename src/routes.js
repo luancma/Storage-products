@@ -5,6 +5,7 @@ import SessionController from './app/controllers/SessionController';
 import ProviderController from './app/controllers/ProviderController';
 
 import authMiddleware from './app/middlewares/auth';
+import AddressController from './app/controllers/AddressController';
 
 const routes = new Router();
 
@@ -15,6 +16,9 @@ routes.get('/users', UserController.index);
 routes.post('/users', UserController.store);
 routes.put('/users/:id', UserController.update);
 routes.delete('/users/:id', UserController.delete);
+
+routes.get('/address/:id', AddressController.show);
+routes.put('/address/:id', AddressController.update);
 
 routes.get('/providers', ProviderController.index);
 routes.post('/providers', ProviderController.store);
